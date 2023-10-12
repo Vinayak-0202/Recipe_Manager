@@ -48,5 +48,22 @@ app.get("/", (req, res) => {
     pool.end();
   });
 });
+
+app.post("/add", function (req, res) {
+  //pg connect
+  const pool = new pg.Pool(config);
+  pool.connect(function (err, client, done) {
+    if (err) {
+      return console.error("error fetching clientfrom pool", err);
+    }
+    client.query(
+      "INSERT INTO recipes(name, ingredients,directions) VALUES($1,$2,$3)",
+      [req.body.name, req.body.ingredients, req.body.directions]
+    );
+    done();
+    res.redirect("/");
+    //pool.end();
+  });
+});
 //server
 app.listen(port, () => console.log(`server is listning on ${port}...`));
