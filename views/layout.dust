@@ -3,9 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./css/bootstrap.css" rel="styles" />
+    <link href="./css/style.css" rel="stylesheet" />
     <title>RecipeBook</title>
   </head>
   <body>
-    {+body /}
+    <div class="container">
+      <div class="row">
+        <div class="col-md-offset-2 col-md-7">{+body /}</div>
+      </div>
+    </div>
+
+    <script src="/js/bootstrap.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   </body>
 </html>

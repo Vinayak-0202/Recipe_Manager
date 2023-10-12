@@ -1,5 +1,10 @@
 {> "layout" /}
 
 {<body}
-  THIS IS INDEX 
-{/body}
+  {#recipes}
+    <div class="well>
+      <h4>{name} <button class="btn btn-default pull-right">View</button></h4>
+
+    </dev>
+  {/recipes} 
+{/body} 
