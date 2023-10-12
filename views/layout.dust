@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="./css/bootstrap.css" rel="styles" />
-    <link href="./css/style.css" rel="stylesheet" />
+    <link href="/css/bootstrap.css" rel="stylesheet" />
+    <link href="/css/style.css" rel="stylesheet" />
     <title>RecipeBook</title>
   </head>
   <body>
@@ -14,7 +14,7 @@
       </div>
     </div>
 
+    <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="/js/bootstrap.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   </body>
 </html>
