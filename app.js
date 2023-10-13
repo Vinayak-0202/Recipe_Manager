@@ -65,5 +65,41 @@ app.post("/add", function (req, res) {
     //pool.end();
   });
 });
+
+app.post("/edit", function (req, res) {
+  //pg connect
+  const pool = new pg.Pool(config);
+  pool.connect(function (err, client, done) {
+    if (err) {
+      return console.error("error fetching clientfrom pool", err);
+    }
+    client.query(
+      "UPDATE recipes SET name=$1, ingredients=$2,directions=$3 WHERE id=$4 ",
+      [
+        req.body.name,
+        req.body.ingredients,
+        req.body.directions,
+        Number(req.body.id),
+      ]
+    );
+    done();
+    res.redirect("/");
+    // pool.end();
+  });
+});
+
+app.delete("/delete/:id", function (req, res) {
+  //pg connect
+  const pool = new pg.Pool(config);
+  pool.connect(function (err, client, done) {
+    if (err) {
+      return console.error("error fetching clientfrom pool", err);
+    }
+    client.query("DELETE FROM recipes WHERE id=$1", [req.params.id]);
+    done();
+    res.status(200);
+    //pool.end();
+  });
+});
 //server
 app.listen(port, () => console.log(`server is listning on ${port}...`));
